@@ -1,0 +1,2 @@
+foreach ($proc in get-process) { try {Get-FileHash $proc.path -Algorithm SHA1 |Format-List| out-file 'C:\Users\Public\hash.txt' -Append } catch {#error handling in process SHA computation
+$proc.Name | Out-File 'C:\Users\Public\error.txt' -Append}}
